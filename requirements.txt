@@ -3,5 +3,6 @@ python-decouple
 gunicorn
 django-cors-headers
 djangorestframework
+django-filter
 channels
 Pillow
