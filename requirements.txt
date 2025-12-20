@@ -1,0 +1,7 @@
+Django==5.1.7
+python-decouple
+gunicorn
+django-cors-headers
+djangorestframework
+channels
+Pillow
