@@ -22,14 +22,17 @@ class ReservationViewSet(viewsets.ModelViewSet):
     permission_classes = [AllowAny]
     
     def get_queryset(self):
-        """Retourner les réservations filtrées par utilisateur ou none si anonyme"""
-        user = self.request.user
-        if user.is_authenticated:
-            if user.is_staff:
-                return Reservation.objects.all()
-            return Reservation.objects.filter(user=user)
-        # Pour les utilisateurs non connectés, ne rien retourner
-        return Reservation.objects.none()
+    """Retourner les réservations filtrées par utilisateur ou none si anonyme"""
+    # TEMPORAIRE : Pour développement, retourner toutes les réservations
+    return Reservation.objects.all()
+    
+    # user = self.request.user
+    # if user.is_authenticated:
+    #     if user.is_staff:
+    #         return Reservation.objects.all()
+    #     return Reservation.objects.filter(user=user)
+    # # Pour les utilisateurs non connectés, ne rien retourner
+    # return Reservation.objects.none()
 
     def get_serializer_class(self):
         """Utiliser un serializer détaillé pour retrieve"""
