@@ -22,7 +22,7 @@ class ReservationViewSet(viewsets.ModelViewSet):
     permission_classes = [AllowAny]
     
     def get_queryset(self):
-    """Retourner les réservations filtrées par utilisateur ou none si anonyme"""
+        """Retourner les réservations filtrées par utilisateur ou none si anonyme"""
     # TEMPORAIRE : Pour développement, retourner toutes les réservations
     return Reservation.objects.all()
     
